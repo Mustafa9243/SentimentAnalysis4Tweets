@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
+  <!--Unit is used by entity manager factory to get link to database and-->
+  <persistence-unit name="Tweet" transaction-type="RESOURCE_LOCAL">
+    <!-- JPA implementation provider -->
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <!-- Class to map to the database -->
+    <class>com.dhamacher.tweetsentimentanalysis.model.Configuration</class>
+    <!-- Database Connection properties -->
+    <class>com.dhamacher.tweetsentimentanalysis.model.Tweet</class>
+    <properties>
+      <property name="eclipselink.target-database" value="MYSQL"/>
+      <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/db_name"/>
+      <!-- Define DB user and password -->
+      <property name="eclipselink.jdbc.user" value="username"/>
+      <property name="eclipselink.jdbc.password" value="password"/>
+      <!-- Create DB if it does not exist? -->
+      <property name="eclipselink.ddl-generation" value="create-tables"/>
+      <!-- Logging properties -->
+      <property name="eclipselink.logging.level" value="INFO"/>
+    </properties>
+  </persistence-unit>
+  <!-- End of persistence unit -->
+</persistence>
